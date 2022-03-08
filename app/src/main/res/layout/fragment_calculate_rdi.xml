@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".ui.fragments.CalculateRdiFragment"
+        android:layout_margin="8dp"
+        android:orientation="vertical">
+
+        <!-- TODO: Update blank fragment layout -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:orientation="horizontal">
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Date: "/>
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_today_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/tv_date"
+                android:text="20 Feb"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_age"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Age"
+            app:helperText="Required"
+            app:suffixText="years"
+            app:suffixTextColor="@android:color/black"
+            android:layout_margin="10dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_age"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:maxLength="3"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_weight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Weight"
+            app:helperText="Required"
+            app:suffixText="Kg"
+            app:suffixTextColor="@android:color/black"
+            android:layout_margin="10dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_weight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_height"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Height"
+            app:helperText="Required"
+            app:suffixText="cm"
+            app:suffixTextColor="@android:color/black"
+            android:layout_margin="10dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_height"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:maxLength="3"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_gender"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Gender"
+            app:helperText="Required"
+            android:layout_margin="10dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu">
+            <AutoCompleteTextView
+                android:id="@+id/act_gender"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="none"
+                android:layout_weight="1"
+                tools:ignore="LabelFor,TouchTargetSizeCheck"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_goal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Diet Goal"
+            app:helperText="Required"
+            android:layout_margin="10dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu">
+            <AutoCompleteTextView
+                android:id="@+id/act_goal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="none"
+                android:layout_weight="1"
+                tools:ignore="LabelFor,TouchTargetSizeCheck"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_activity_level"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Activity level"
+            app:helperText="Required"
+            android:layout_margin="10dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu">
+            <AutoCompleteTextView
+                android:id="@+id/act_activity_level"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="none"
+                android:layout_weight="1"
+                tools:ignore="LabelFor,TouchTargetSizeCheck"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_calculate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Calculate"
+            android:layout_margin="16dp"
+            android:layout_gravity="center"/>
+    </LinearLayout>
+
+</ScrollView>

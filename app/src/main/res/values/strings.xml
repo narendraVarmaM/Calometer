@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Calometer</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="Dairy">Dairy</string>
+    <string name="Home">Home</string>
+    <string name="Weight">Weight</string>
+    <string name="Profile">Profile</string>
+    <string name="sign_up">Sign Up</string>
+</resources>

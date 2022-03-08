@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            tools:layout_editor_absoluteX="0dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/relativeLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_selected_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="64dp"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:padding="15dp"
+                    android:text="TextView" />
+
+                <ImageView
+                    android:id="@+id/iv_edit_calendar_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/tv_selected_date"
+                    android:padding="15dp"
+                    android:src="@drawable/ic_baseline_edit_calendar_24" />
+
+            </LinearLayout>
+
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_calories_remaining"
+                    android:layout_width="0dp"
+                    android:layout_weight="5"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:fontFamily="@font/roboto"
+                    android:text="Calories Remaining" />
+                <TextView
+                    android:id="@+id/tv_calories_remaining_value"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginEnd="16dp" />
+
+            </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_calories_consumed"
+                        android:layout_width="0dp"
+                        android:layout_weight="5"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="32dp"
+                        android:fontFamily="@font/roboto"
+                        android:text="Calories Consumed" />
+
+                    <TextView
+                        android:id="@+id/tv_calories_consumed_value"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="16dp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_meal_type"
+                    android:layout_width="match_parent"
+                    android:nestedScrollingEnabled="false"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/tv_title_summary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Summary"
+                    android:textSize="20sp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="16dp"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_calories_remaining_s"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:fontFamily="@font/roboto"
+                        android:layout_marginStart="4dp"
+                        android:text="Calories Remaining"
+                        tools:ignore="DuplicateIds" />
+                    <TextView
+                        android:id="@+id/tv_calories_remaining_value_s"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="32dp"
+                        tools:ignore="DuplicateIds" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp">
+
+                    <TextView
+                        android:id="@+id/tv_calories_consumed_s"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:fontFamily="@font/roboto"
+                        android:layout_marginStart="4dp"
+                        android:text="Calories Consumed"
+                        tools:ignore="DuplicateIds" />
+                    <TextView
+                        android:id="@+id/tv_calories_consumed_value_s"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="32dp"
+                        android:textStyle="bold"
+                        tools:ignore="DuplicateIds" />
+
+                </LinearLayout>
+
+                <com.google.android.material.divider.MaterialDivider
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="36dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp">
+
+                    <TextView
+                        android:id="@+id/tv_rdi_percentage"
+                        android:layout_width="0dp"
+                        android:layout_weight="4"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto"
+                        android:textStyle="italic"
+                        android:layout_marginStart="4dp" />
+                    <TextView
+                        android:id="@+id/tv_total_goal"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginEnd="32dp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <com.google.android.material.divider.MaterialDivider
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"/>
+
+                <LinearLayout
+                    android:id="@+id/ll_summary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_margin="8dp">
+
+                    <com.github.mikephil.charting.charts.PieChart
+                        android:id="@+id/chart2"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:layout_margin="8dp"/>
+
+                    <com.google.android.material.divider.MaterialDivider
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginBottom="8dp"/>
+
+                    <TextView
+                        android:id="@+id/tv_total_fat"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                    <TextView
+                        android:id="@+id/tv_cholesterol"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                    <TextView
+                        android:id="@+id/tv_sodium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                    <TextView
+                        android:id="@+id/tv_total_carbohydrate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                    <TextView
+                        android:id="@+id/tv_dietary_fiber"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                    <TextView
+                        android:id="@+id/tv_sugars"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                    <TextView
+                        android:id="@+id/tv_protein"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

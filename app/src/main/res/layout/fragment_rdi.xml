@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".ui.fragments.RdiFragment"
+        android:layout_margin="8dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="What is Recommended Daily Intake?"
+            android:textStyle="bold"
+            android:textAlignment="center"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="Calorie Counter calculates your Recommended Daily Intake or RDI to give you a daily calorie target to achieve your goal weight."
+            android:textAlignment="center"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:textAlignment="center"
+            android:text="Once your RDI is set, all foods, as well as your food dairy and diet calendar are displayed with your RDI in mind."/>
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_margin="8dp"
+            android:background="@android:color/darker_gray"
+            android:padding="10dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:textAlignment="center"
+            android:text="The RDI calculation is base on your unique factors including your age, weight, height, gender and activity level"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="32dp"
+            android:layout_gravity="center">
+            <TextView
+                android:id="@+id/tv_rdi_last"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text="Last Calculated RDI: " />
+
+            <TextView
+                android:id="@+id/tv_calorie_goal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3000kcal"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_recalculate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Recalculate"
+            android:layout_gravity="center"
+            android:layout_marginBottom="16dp"/>
+
+
+    </LinearLayout>
+    </ScrollView>
+</layout>

@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/homeFragment">
+    <fragment
+        android:id="@+id/diaryFragment"
+        android:name="com.example.calometer.ui.fragments.DiaryFragment"
+        android:label="Diary">
+        <action
+            android:id="@+id/action_diaryFragment_to_searchFoodFragment"
+            app:destination="@id/searchFoodFragment" />
+        <action
+            android:id="@+id/action_diaryFragment_to_editFoodItemFragment"
+            app:destination="@id/editFoodItemFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.calometer.ui.fragments.HomeFragment"
+        android:label="Calometer"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_rdiFragment"
+            app:destination="@id/rdiFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchFoodFragment"
+        android:name="com.example.calometer.ui.fragments.SearchFoodFragment"
+        android:label="Search"
+        tools:layout="@layout/fragment_search_food">
+        <argument
+            android:name="mealType"
+            app:argType="com.example.calometer.models.enums.MealType" />
+        <argument
+            android:name="dateSelected"
+            app:argType="long" />
+        <action
+            android:id="@+id/action_searchFoodFragment_to_saveFoodItemFragment"
+            app:destination="@id/saveFoodItemFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editFoodItemFragment"
+        android:name="com.example.calometer.ui.fragments.EditFoodItemFragment"
+        android:label="Edit in My Food Dairy">
+        <argument
+            android:name="foodConsumed"
+            app:argType="com.example.calometer.models.entity.FoodConsumed" />
+        <action
+            android:id="@+id/action_editFoodItemFragment_to_diaryFragment"
+            app:destination="@id/diaryFragment"
+            app:popUpTo="@id/diaryFragment"
+            app:popUpToInclusive="true"/>
+    </fragment>
+    <fragment
+        android:id="@+id/saveFoodItemFragment"
+        android:name="com.example.calometer.ui.fragments.SaveFoodItemFragment"
+        android:label="Add to My Food Dairy">
+        <argument
+            android:name="mealType"
+            app:argType="com.example.calometer.models.enums.MealType" />
+        <argument
+            android:name="dateSelected"
+            app:argType="long" />
+        <argument
+            android:name="foodData"
+            app:argType="com.example.calometer.models.entity.FoodData" />
+        <action
+            android:id="@+id/action_saveFoodItemFragment_to_diaryFragment2"
+            app:destination="@id/diaryFragment"
+            app:popUpTo="@+id/diaryFragment"
+            app:popUpToInclusive="true"/>
+    </fragment>
+    <fragment
+        android:id="@+id/weightFragment"
+        android:name="com.example.calometer.ui.fragments.WeightFragment">
+        <action
+            android:id="@+id/action_weightFragment_to_saveWeightDetailsFragment"
+            app:destination="@id/saveWeightDetailsFragment" />
+        <action
+            android:id="@+id/action_weightFragment_to_editWeightDetailsFragment"
+            app:destination="@id/editWeightDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/saveWeightDetailsFragment"
+        android:name="com.example.calometer.ui.fragments.SaveWeightDetailsFragment">
+        <action
+            android:id="@+id/action_saveWeightDetailsFragment_to_weightFragment"
+            app:destination="@id/weightFragment"
+            app:popUpTo="@id/weightFragment"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="weight"
+            app:argType="string" />
+        <argument
+            android:name="source"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/editWeightDetailsFragment"
+        android:name="com.example.calometer.ui.fragments.EditWeightDetailsFragment">
+        <action
+            android:id="@+id/action_editWeightDetailsFragment_to_weightFragment"
+            app:destination="@id/weightFragment"
+            app:popUpTo="@id/weightFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.example.calometer.ui.fragments.SignUpFragment"
+        android:label="Sign Up">
+        <action
+            android:id="@+id/action_signUpFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.calometer.ui.fragments.LoginFragment"
+        android:label="Login">
+        <action
+            android:id="@+id/action_loginFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true"/>
+    </fragment>
+    <fragment
+        android:id="@+id/userProfileFragment"
+        android:name="com.example.calometer.ui.fragments.UserProfileFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_user_profile">
+        <action
+            android:id="@+id/action_userProfileFragment_to_rdiFragment"
+            app:destination="@id/rdiFragment" />
+        <action
+            android:id="@+id/action_userProfileFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_userProfileFragment_to_updateProfileFragment"
+            app:destination="@id/updateProfileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/rdiFragment"
+        android:name="com.example.calometer.ui.fragments.RdiFragment"
+        android:label="Your Recommended Daily Intake(RDI)"
+        tools:layout="@layout/fragment_rdi">
+        <action
+            android:id="@+id/action_rdiFragment_to_calculateRdiFragment"
+            app:destination="@id/calculateRdiFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/calculateRdiFragment"
+        android:name="com.example.calometer.ui.fragments.CalculateRdiFragment"
+        android:label="Calculate your Recommended Daily Intake(RDI)"
+        tools:layout="@layout/fragment_calculate_rdi">
+        <action
+            android:id="@+id/action_calculateRdiFragment_to_saveRdi"
+            app:destination="@id/saveRdi" />
+    </fragment>
+    <fragment
+        android:id="@+id/saveRdi"
+        android:name="com.example.calometer.ui.fragments.SaveRdi"
+        android:label="Calculate your Recommended Daily Intake(RDI)"
+        tools:layout="@layout/fragment_save_rdi">
+        <argument
+            android:name="user"
+            app:argType="com.example.calometer.models.entity.User" />
+        <action
+            android:id="@+id/action_saveRdi_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="true"/>
+    </fragment>
+    <fragment
+        android:id="@+id/updateProfileFragment"
+        android:name="com.example.calometer.ui.fragments.UpdateProfileFragment"
+        android:label="Update Password">
+        <action
+            android:id="@+id/action_updateProfileFragment_to_userProfileFragment"
+            app:destination="@id/userProfileFragment"
+            app:popUpTo="@id/userProfileFragment"
+            app:popUpToInclusive="true"/>
+    </fragment>
+</navigation>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primaryColor">#37464f</color>
+
+    <color name="primaryLightColor">#62717b</color>
+
+    <color name="primaryDarkColor">#101f27</color>
+
+    <color name="secondaryColor">#ffc400</color>
+
+    <color name="secondaryLightColor">#fff64f</color>
+
+    <color name="secondaryDarkColor">#c79400</color>
+
+    <color name="primaryTextColor">#ffffff</color>
+
+    <color name="secondaryTextColor">#000000</color>
+
+    <color name="colourBackground">#ecefff</color>
+
+    <color name="underline">#d8d6d6</color>
+
+    <color name="orange_200">#ffcc80</color>
+
+    <color name="black">#FF000000</color>
+
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="label_color">#ffffff</color>
+
+    <color name="backgroundColor">#ffffff</color>
+
+    <color name="upper_limit">#00B0FF</color>
+
+    <color name="lower_limit">#F50057</color>
+
+    <color name="line_chart">#FF5252</color>
+    <color name="line_chart_end">#000000</color>
+</resources>

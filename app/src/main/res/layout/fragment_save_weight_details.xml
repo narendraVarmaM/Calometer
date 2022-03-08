@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/primaryColor">
+
+        <ImageView
+            android:id="@+id/iv_close_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:src="@drawable/ic_baseline_close_24"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <!--            <TextView-->
+        <!--                android:id="@+id/tv_date"-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="match_parent"-->
+        <!--                android:layout_toEndOf="@id/iv_close_icon"-->
+        <!--                android:layout_marginLeft="64dp"-->
+        <!--                android:layout_centerVertical="true"/>-->
+
+        <!--            <ImageView-->
+        <!--                android:id="@+id/iv_edit_calendar_icon"-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="match_parent"-->
+        <!--                android:layout_centerVertical="true"-->
+        <!--                android:layout_toEndOf="@id/tv_date"-->
+        <!--                android:src="@drawable/ic_baseline_edit_calendar_24"-->
+        <!--                app:tint="@android:color/white" />-->
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_date"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/iv_close_icon"
+            app:boxBackgroundColor="@color/primaryColor"
+            app:boxBackgroundMode="none"
+            app:boxStrokeColor="@color/primaryColor"
+            app:endIconDrawable="@drawable/ic_baseline_edit_calendar_24"
+            app:endIconMode="custom"
+            app:endIconTint="@android:color/white"
+            app:layout_constraintEnd_toStartOf="@id/iv_check_icon"
+            app:layout_constraintStart_toEndOf="@id/iv_close_icon"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <AutoCompleteTextView
+                android:id="@+id/tv_auto_complete"
+                android:layout_width="161dp"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="8dp"
+                android:layout_weight="1"
+                android:inputType="none"
+                android:textColor="@android:color/white"
+                tools:ignore="TouchTargetSizeCheck" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/iv_check_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:padding="15dp"
+            android:src="@drawable/ic_baseline_check_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <ImageView
+            android:id="@+id/iv_remove_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="72dp"
+            android:src="@drawable/ic_baseline_remove_circle_outline_48"
+            app:layout_constraintEnd_toStartOf="@+id/tv_weight_value"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_close_icon" />
+
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tv_weight_value"
+            android:layout_width="128dp"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="16dp"
+            android:layout_toEndOf="@+id/iv_remove_icon"
+            android:background="@drawable/custom_edit_text_weight"
+            android:backgroundTint="@color/primaryDarkColor"
+            android:inputType="numberDecimal"
+            android:text="600"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="36sp"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_remove_icon"
+            app:layout_constraintEnd_toStartOf="@+id/tv_weight"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/iv_remove_icon"
+            app:layout_constraintTop_toTopOf="@+id/iv_remove_icon" />
+
+        <TextView
+            android:id="@+id/tv_weight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/tv_weight_value"
+            android:backgroundTint="@color/primaryDarkColor"
+            android:text="kg"
+            android:layout_marginLeft="8dp"
+            android:textColor="@android:color/white"
+            android:textSize="36sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_weight_value"
+            app:layout_constraintEnd_toStartOf="@+id/iv_add_icon"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tv_weight_value"
+            app:layout_constraintTop_toTopOf="@+id/tv_weight_value" />
+
+        <ImageView
+            android:id="@+id/iv_add_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="16dp"
+            android:layout_toEndOf="@+id/tv_weight"
+            android:src="@drawable/ic_baseline_add_circle_outline_48"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_weight"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tv_weight"
+            app:layout_constraintTop_toTopOf="@+id/tv_weight" />
+
+        <TextView
+            android:id="@+id/tv_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:layout_marginTop="32dp"
+            app:layout_constraintEnd_toEndOf="@+id/tv_weight"
+            app:layout_constraintStart_toStartOf="@+id/tv_weight_value"
+            app:layout_constraintTop_toBottomOf="@+id/tv_weight_value" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

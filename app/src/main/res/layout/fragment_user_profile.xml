@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="userProfileFragment"
+            type="com.example.calometer.ui.fragments.UserProfileFragment" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.fragments.UserProfileFragment">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+       <RelativeLayout
+           android:layout_width="match_parent"
+           android:layout_height="300dp"
+           android:padding="20dp"
+           android:background="@color/primaryColor">
+           <ImageView
+               android:id="@+id/iv_profile"
+               android:layout_width="100dp"
+               android:layout_height="100dp"
+               android:layout_centerVertical="true"
+               android:src="@drawable/ic_baseline_account_circle_24"
+               app:tint="@android:color/white" />
+           <TextView
+               android:id="@+id/tv_name"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:textSize="20sp"
+               android:layout_toEndOf="@id/iv_profile"
+               android:layout_centerVertical="true"
+               android:text="Narendra varma"
+               android:includeFontPadding="true"
+               android:textColor="@android:color/white"
+               android:textStyle="bold"
+               android:layout_marginStart="10dp"/>
+       </RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:layout_marginTop="-100dp">
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cv_calculate_rdi"
+                android:layout_width="0dp"
+                android:layout_height="125dp"
+                android:layout_weight="1"
+                app:cardElevation="10dp"
+                app:cardBackgroundColor="@color/primaryColor"
+                android:layout_margin="10dp">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="5dp">
+                    <ImageView
+                        android:id="@+id/iv_calculate"
+                        android:layout_width="72dp"
+                        android:layout_height="75dp"
+                        android:src="@drawable/ic_baseline_calculate_24"
+                        android:layout_centerHorizontal="true"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Calculate RDI"
+                        android:textSize="20sp"
+                        android:layout_below="@+id/iv_calculate"
+                        android:layout_centerHorizontal="true"
+                        android:textColor="@android:color/white"/>
+
+                </RelativeLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cv_edit_profile"
+                android:layout_width="0dp"
+                android:layout_height="125dp"
+                android:layout_weight="1"
+                app:cardElevation="10dp"
+                app:cardBackgroundColor="@color/primaryColor"
+                android:layout_margin="10dp">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="5dp">
+                    <ImageView
+                        android:id="@+id/iv_log_out"
+                        android:layout_width="72dp"
+                        android:layout_height="75dp"
+                        android:src="@drawable/ic_baseline_manage_accounts_24"
+                        android:layout_centerHorizontal="true"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Edit Profile"
+                        android:textSize="20sp"
+                        android:layout_below="@+id/iv_log_out"
+                        android:layout_centerHorizontal="true"
+                        android:textColor="@android:color/white"/>
+
+                </RelativeLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:orientation="vertical">
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_mobile"
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Mobile Number"
+                android:layout_marginBottom="10dp">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_mobile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:enabled="false"
+                    android:textStyle="bold"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_age"
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Age"
+                android:layout_marginBottom="10dp">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:enabled="false"
+                    android:textStyle="bold"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_gender"
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Gender"
+                android:layout_marginBottom="10dp">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:enabled="false"
+                    android:textStyle="bold"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_log_out"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Log Out" />
+
+        </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

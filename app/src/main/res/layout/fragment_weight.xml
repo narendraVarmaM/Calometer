@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.fragments.WeightFragment">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/weight_toolbar"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:background="@color/primaryColor"
+            android:minHeight="?attr/actionBarSize"
+            app:title="Weight"
+            app:titleTextColor="@android:color/white"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+            <ImageView
+                android:id="@+id/iv_add_icon"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/ic_baseline_add_white_24"
+                android:layout_gravity="end"
+                android:layout_marginEnd="16dp"/>
+        </androidx.appcompat.widget.Toolbar>
+
+
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/weight_toolbar" >
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/primaryColor">
+
+                    <TextView
+                        android:id="@+id/tv_recent_weight"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:background="@color/primaryLightColor"
+                        android:backgroundTintMode="multiply"
+                        android:text="61 kg"
+                        android:textColor="@android:color/white"
+                        android:textSize="32sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+
+                        android:id="@+id/tv_recent_weight_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="last wieght"
+                        android:textColor="@android:color/white"
+                        app:layout_constraintEnd_toEndOf="@id/tv_recent_weight"
+                        app:layout_constraintStart_toStartOf="@+id/tv_recent_weight"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_recent_weight" />
+
+                    <TextView
+                        android:id="@+id/tv_start"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="32dp"
+                        android:layout_marginTop="32dp"
+                        android:text="Start:"
+                        android:textColor="@android:color/white"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_recent_weight_date" />
+
+                    <TextView
+                        android:id="@+id/tv_start_weight"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="8dp"
+                        android:layout_marginBottom="16dp"
+                        android:text="60kg"
+                        android:textColor="@android:color/white"
+                        android:background="@color/primaryLightColor"
+                        android:backgroundTintMode="multiply"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@+id/tv_start"
+                        app:layout_constraintStart_toStartOf="@+id/tv_start"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_start" />
+
+                    <TextView
+                        android:id="@+id/tv_goal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="32dp"
+                        android:layout_marginTop="32dp"
+                        android:text="Goal:"
+                        android:textColor="@android:color/white"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_recent_weight_date" />
+
+                    <TextView
+                        android:id="@+id/tv_goal_weight"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="8dp"
+                        android:layout_marginBottom="16dp"
+                        android:background="@color/primaryLightColor"
+                        android:backgroundTintMode="multiply"
+                        android:text="70 kg"
+                        android:textColor="@android:color/white"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@+id/tv_goal"
+                        app:layout_constraintStart_toStartOf="@+id/tv_goal"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_goal" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fillViewport="true"
+                    android:scrollbars="horizontal">
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <com.github.mikephil.charting.charts.LineChart
+                            android:id="@+id/chart1"
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp"
+                            android:layout_margin="16dp" />
+                    </LinearLayout>
+
+                </HorizontalScrollView>
+
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_marginTop="24dp"
+                    android:id="@+id/rv_weight_details"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
